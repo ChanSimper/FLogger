@@ -28,7 +28,8 @@ see `Config`
 #### 3. In your project code
 ```
 //获取单例
-FLogger logger = FLogger.getInstance();
+FLogger logger = FLogger.getInstance();   // 日志格式:level time thread message
+// KLogger logger = KLogger.getInstance(); // 日志格式：time level file line message
 //简便api,只需指定内容
 logger.info("Here is your message...");
 //指定日志级别和内容，文件名自动映射
