@@ -40,6 +40,9 @@ public final class Constant {
      */
     public static String CFG_LOG_LEVEL = CommUtil.getConfigByString("LOG_LEVEL", "0,1,2,3,4");
 
+    /**是否输出到控制台*/
+    public static boolean CONSOLE_PRINT = CommUtil.getConfigByBoolean("CONSOLE_PRINT",Boolean.TRUE);
+
     /**
      * 当前运行环境的字符集
      */

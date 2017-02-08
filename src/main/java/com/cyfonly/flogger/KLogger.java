@@ -133,10 +133,12 @@ public class KLogger {
             logManager.addLog(logFileName, sb);
 
             //错误信息同时打印到控制台
-            try {
-                System.out.print(new String(sb.toString().getBytes(Constant.CFG_CHARSET_NAME), Constant.CFG_CHARSET_NAME));
-            } catch (Exception e) {
-                System.out.println(CommUtil.getExpStack(e));
+            if (Constant.CONSOLE_PRINT) {
+                try {
+                    System.out.print(new String(sb.toString().getBytes(Constant.CFG_CHARSET_NAME), Constant.CFG_CHARSET_NAME));
+                } catch (Exception e) {
+                    System.out.println(CommUtil.getExpStack(e));
+                }
             }
         }
     }

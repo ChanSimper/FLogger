@@ -60,6 +60,23 @@ public class CommUtil {
     }
 
     /**
+     * 从配置文件中取得 boolean 值，若无则返回默认值
+     *
+     * @param keyName      属性名
+     * @param defaultValue 默认值
+     * @return 属性值
+     */
+    public static boolean getConfigByBoolean(String keyName, boolean defaultValue) {
+        String value = getConfig(keyName);
+        if (value != null && value.length() > 0) {
+            return Boolean.parseBoolean(value.trim());
+        } else {
+            return defaultValue;
+        }
+    }
+
+
+    /**
      * 从配置文件中读取字符串的值
      * 配置文件查找顺序：
      * 1-项目根路径
